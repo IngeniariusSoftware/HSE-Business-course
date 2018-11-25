@@ -6,7 +6,8 @@
   <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-BUOFA5H;Integrated Security=SSPI;Initial Catalog=AdventureWorksDW2017</ConnectionString>
   <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
   <ImpersonationInfo>
-    <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
+    <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
+    <Account>пр</Account>
     <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
   </ImpersonationInfo>
   <Timeout>PT0S</Timeout>

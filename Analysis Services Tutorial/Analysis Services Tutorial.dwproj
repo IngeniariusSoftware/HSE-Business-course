@@ -6,10 +6,30 @@
     <Name>Analysis Services Tutorial.database</Name>
     <FullPath>Analysis Services Tutorial.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Analysis Services Tutorial.cube</Name>
+      <FullPath>Analysis Services Tutorial.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Analysis Services Tutorial.partitions</Name>
+          <FullPath>Analysis Services Tutorial.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Дата.dim</Name>
       <FullPath>Дата.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Продукт.dim</Name>
+      <FullPath>Продукт.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Клиент.dim</Name>
+      <FullPath>Клиент.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -42,6 +62,7 @@
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
+        <RemovePasswords>false</RemovePasswords>
       </Options>
     </Configuration>
   </Configurations>
