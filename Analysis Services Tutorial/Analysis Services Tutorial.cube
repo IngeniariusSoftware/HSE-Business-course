@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7906" scrolltop="-2112" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="80" x="25083" y="13441" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7906" scrolltop="-2112" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="80" x="7726" y="10927" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
             </font>
@@ -347,9 +347,6 @@
         <Attribute dwd:design-time-name="0af0cc65-4eb1-49da-96c1-182065a72012">
           <AttributeID>Geography Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="78d3093c-5568-4176-97a0-1b96fc723da1">
-          <AttributeID>Birth Date</AttributeID>
-        </Attribute>
         <Attribute dwd:design-time-name="c2351442-e733-4e79-97c4-5df5626e0759">
           <AttributeID>Date First Purchase</AttributeID>
         </Attribute>
@@ -398,7 +395,18 @@
         <Attribute dwd:design-time-name="8e82c0f2-2e01-4dc7-a552-44862d4b27bd">
           <AttributeID>English Country Region Name</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="41c694bc-2f55-4423-b03a-89c929903408">
+          <AttributeID>Commute Distance</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2cb04572-5666-4de5-8a25-e72eb7cd0031">
+          <AttributeID>Birth Date</AttributeID>
+        </Attribute>
       </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="4681e9ba-28df-4e79-8d62-75dd0e242bd8">
+          <HierarchyID>Иерархия</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
     </Dimension>
     <Dimension dwd:design-time-name="70e726bc-c1a4-464b-8cbb-f1ba7a5b7fd1">
       <ID>Order Date</ID>
@@ -437,7 +445,7 @@
       <Measures>
         <Measure dwd:design-time-name="aa764e4e-4462-45ac-a091-1b3145463c79">
           <ID>Order Quantity</ID>
-          <Name>Order Quantity</Name>
+          <Name>Заказанное количество</Name>
           <Source dwd:design-time-name="1cc821cd-dd05-4510-883d-f7d76ce5c24d">
             <DataType>Integer</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="72b10283-003d-4fe9-a87b-ff4175bb1014">
@@ -445,10 +453,11 @@
               <ColumnID>OrderQuantity</ColumnID>
             </Source>
           </Source>
+          <FormatString>#,#</FormatString>
         </Measure>
         <Measure dwd:design-time-name="ae226423-8e5f-4ad6-9c6b-1c5abdaf7313">
           <ID>Unit Price</ID>
-          <Name>Unit Price</Name>
+          <Name>Цены единицы продукта</Name>
           <Source dwd:design-time-name="4b128e8e-7592-4a20-a84b-1593c88ada4a">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="cc84271a-12a2-4f4f-a374-2ff6bbb9e2cc">
@@ -456,10 +465,11 @@
               <ColumnID>UnitPrice</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="ccb38016-fec5-4779-92f3-88352d393e34">
           <ID>Extended Amount</ID>
-          <Name>Extended Amount</Name>
+          <Name>Стоимость товара</Name>
           <Source dwd:design-time-name="dd2faf11-36c7-47f5-98e7-3a3cf6170065">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="5ae1aa68-439a-4a92-9f52-ad0fd9e62d67">
@@ -467,10 +477,11 @@
               <ColumnID>ExtendedAmount</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="40ffc547-1c9f-4e0f-83c1-cfe3bed1f541">
           <ID>Unit Price Discount Pct</ID>
-          <Name>Unit Price Discount Pct</Name>
+          <Name>Процент скидки на единицу товара</Name>
           <Source dwd:design-time-name="a6c1f228-e61d-4fff-a8a7-804540f003d4">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="11418782-9ea4-48e9-bd79-b105fcd481d2">
@@ -478,10 +489,11 @@
               <ColumnID>UnitPriceDiscountPct</ColumnID>
             </Source>
           </Source>
+          <FormatString>Percent</FormatString>
         </Measure>
         <Measure dwd:design-time-name="a6e5f00a-cd0d-449d-b59e-fe12fa18ea11">
           <ID>Discount Amount</ID>
-          <Name>Discount Amount</Name>
+          <Name>Размер скидки</Name>
           <Source dwd:design-time-name="6a06a651-1a7d-4985-b7c2-d26656346f13">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="6d36fe0f-40d1-481c-874e-a154a267e31e">
@@ -489,10 +501,11 @@
               <ColumnID>DiscountAmount</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="430e0034-cf42-43ed-9e91-d43ee12ec4cf">
           <ID>Product Standard Cost</ID>
-          <Name>Product Standard Cost</Name>
+          <Name>Стандартная стоимость продукта</Name>
           <Source dwd:design-time-name="284940f7-9eb7-4074-a630-450d9e0935f3">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="24b5def2-2a62-4c72-b6e9-355fa7a356ec">
@@ -500,10 +513,11 @@
               <ColumnID>ProductStandardCost</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="660d843a-1492-4980-bc29-2b8f34018574">
           <ID>Total Product Cost</ID>
-          <Name>Total Product Cost</Name>
+          <Name>Полная стоимость продукта</Name>
           <Source dwd:design-time-name="bbfbb0fc-7949-4849-ba40-73c93082069d">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="e6edeb0a-c70b-466a-a793-ad3f9b2b5906">
@@ -511,10 +525,11 @@
               <ColumnID>TotalProductCost</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="683447ec-5e5f-4710-9d68-353af02b399b">
           <ID>Sales Amount</ID>
-          <Name>Sales Amount</Name>
+          <Name>Сумма продаж</Name>
           <Source dwd:design-time-name="bdbf083c-12d8-48c4-bff6-40992765e372">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="5fd2dbee-6e14-415c-84ec-fec7a962e065">
@@ -522,10 +537,11 @@
               <ColumnID>SalesAmount</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="718ef64c-a83e-4651-a801-aaed5fc2e0f3">
           <ID>Tax Amt</ID>
-          <Name>Tax Amt</Name>
+          <Name>Размер налога</Name>
           <Source dwd:design-time-name="cde7c99d-ddb1-4bac-86b0-da27e7359bb6">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="686fa9f3-73b2-4a0c-b306-41d0cd1e21f8">
@@ -533,10 +549,11 @@
               <ColumnID>TaxAmt</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="10d93d14-6ad9-406c-874a-789aac9df775">
           <ID>Freight</ID>
-          <Name>Freight</Name>
+          <Name>Стоимость доставки</Name>
           <Source dwd:design-time-name="db7d33a1-0d1b-471b-b881-af122dae531b">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="fb84ea29-65a0-4855-83a3-26b820bef55f">
@@ -544,6 +561,7 @@
               <ColumnID>Freight</ColumnID>
             </Source>
           </Source>
+          <FormatString>Currency</FormatString>
         </Measure>
         <Measure dwd:design-time-name="6cb27904-5e19-40e8-944a-1ddfc980a26f">
           <ID>Число Продажи Через Интернет</ID>
