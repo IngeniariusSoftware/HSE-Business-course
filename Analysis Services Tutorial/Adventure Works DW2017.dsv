@@ -27,7 +27,7 @@
             <Name>_ALL_TABLES_</Name>
             <DiagramLayout>
               <dds>
-                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6035" scrolltop="-3257" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="55" x="27437" y="15452" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="4694" scrolltop="3805" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="55" x="0" y="15028" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                   <font>
                     <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
                   </font>
@@ -213,8 +213,8 @@
 </DiagramLayout>
             <ShowRelationshipNames>False</ShowRelationshipNames>
             <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
-            <DiagramViewPortLeft>-6035</DiagramViewPortLeft>
-            <DiagramViewPortTop>-3257</DiagramViewPortTop>
+            <DiagramViewPortLeft>4694</DiagramViewPortLeft>
+            <DiagramViewPortTop>3805</DiagramViewPortTop>
             <DiagramBoundingLeft>0</DiagramBoundingLeft>
             <DiagramBoundingTop>0</DiagramBoundingTop>
             <DiagramZoom>55</DiagramZoom>
@@ -381,7 +381,7 @@
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
-                  <xs:element name="Полное_x0020_имя" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="case&#xD;&#xA;  when MiddleName is null then&#xD;&#xA;  FirstName + ' ' + LastName&#xD;&#xA;  else&#xD;&#xA;  FirstName + ' ' + MiddleName + ' ' + LastName&#xD;&#xA;end" msprop:IsLogical="True" msprop:design-time-name="8fc78ce7-272d-4395-a590-f5a36bd8d33b" msprop:DbColumnName="Полное имя" minOccurs="0">
+                  <xs:element name="Полное_x0020_имя" msdata:ReadOnly="true" msprop:design-time-name="8fc78ce7-272d-4395-a590-f5a36bd8d33b" msprop:IsLogical="True" msprop:Description="" msprop:DbColumnName="Полное имя" msprop:ComputedColumnExpression="case&#xD;&#xA;  when MiddleName is null then&#xD;&#xA;  FirstName + ' ' + LastName&#xD;&#xA;  else&#xD;&#xA;  FirstName + ' ' + MiddleName + ' ' + LastName&#xD;&#xA;end" minOccurs="0">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="152" />
@@ -449,6 +449,34 @@
                   <xs:element name="FiscalQuarter" msprop:design-time-name="5578ace5-a951-4042-b6dd-0ddad7be0136" msprop:DbColumnName="FiscalQuarter" msprop:FriendlyName="FiscalQuarter" type="xs:unsignedByte" />
                   <xs:element name="FiscalYear" msprop:design-time-name="15f39eb0-0ebc-45d7-ac56-85dde63a0e4d" msprop:DbColumnName="FiscalYear" msprop:FriendlyName="FiscalYear" type="xs:short" />
                   <xs:element name="FiscalSemester" msprop:design-time-name="807bc1c1-e459-4b40-b440-90ea0ec9dfb2" msprop:DbColumnName="FiscalSemester" msprop:FriendlyName="FiscalSemester" type="xs:unsignedByte" />
+                  <xs:element name="Простая_x0020_дата" msdata:ReadOnly="true" msprop:design-time-name="52442bca-60a2-462b-a6ff-6189e4a6dc39" msprop:IsLogical="True" msprop:Description="" msprop:DbColumnName="Простая дата" msprop:ComputedColumnExpression="Datename(mm, FullDateAlternateKey) + '' +&#xD;&#xA;Datename(dd, FullDateAlternateKey) + ', ' +&#xD;&#xA;Datename(yy, FullDateAlternateKey)" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="93" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Имя_x0020_месяца" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="EnglishMonthName + ' ' +convert(char(4), CalendarYear)" msprop:IsLogical="True" msprop:design-time-name="d0d234d2-1831-4e09-986d-5592659eaa71" msprop:DbColumnName="Имя месяца" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Имя_x0020_квартала" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="'K' + convert(char(1), CalendarQuarter) + ' ' + 'G' + convert(char(4), CalendarYear)" msprop:IsLogical="True" msprop:design-time-name="1a6aa8c5-c4df-4ce9-b477-ad82b7830c92" msprop:DbColumnName="Имя квартала" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Имя_x0020_полугодия" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="case&#xD;&#xA;  when CalendarSemester = 1 then 'P1' + ' ' + 'G' + ' ' + convert(char(4), CalendarYear)&#xD;&#xA;  else&#xD;&#xA;  'P2' + ' ' + 'G' + ' ' + convert(char(4), CalendarYear)&#xD;&#xA;end" msprop:IsLogical="True" msprop:design-time-name="d4e9a1a0-091a-4256-a26a-383e353a0a48" msprop:DbColumnName="Имя полугодия" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -700,6 +728,13 @@
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
+                  <xs:element name="Название_x0020_линейки_x0020_продуктов" msdata:ReadOnly="true" msprop:design-time-name="40603a4b-4b84-408b-bd43-718d7c50ea60" msprop:IsLogical="True" msprop:Description="" msprop:DbColumnName="Название линейки продуктов" msprop:ComputedColumnExpression="case ProductLine&#xD;&#xA;      when 'M' then 'Mountain'&#xD;&#xA;      when 'R' then  'Road'&#xD;&#xA;      when 'S' then 'Accessories'&#xD;&#xA;      when 'T' then 'Tourist'&#xD;&#xA;      else 'Components'&#xD;&#xA;end">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -776,25 +811,25 @@
           <xs:field xpath="SalesOrderNumber" />
           <xs:field xpath="SalesOrderLineNumber" />
         </xs:unique>
-        <xs:keyref name="FK_FactInternetSales_DimDate" refer="dbo_DimDate_Constraint1">
+        <xs:keyref name="FK_FactInternetSales_DimProduct" refer="dbo_DimProduct_Constraint1">
           <xs:selector xpath=".//dbo_FactInternetSales" />
-          <xs:field xpath="OrderDateKey" />
-        </xs:keyref>
-        <xs:keyref name="FK_FactInternetSales_DimCustomer" refer="Constraint1">
-          <xs:selector xpath=".//dbo_FactInternetSales" />
-          <xs:field xpath="CustomerKey" />
-        </xs:keyref>
-        <xs:keyref name="FK_FactInternetSales_DimDate1" refer="dbo_DimDate_Constraint1">
-          <xs:selector xpath=".//dbo_FactInternetSales" />
-          <xs:field xpath="DueDateKey" />
+          <xs:field xpath="ProductKey" />
         </xs:keyref>
         <xs:keyref name="FK_FactInternetSales_DimDate2" refer="dbo_DimDate_Constraint1">
           <xs:selector xpath=".//dbo_FactInternetSales" />
           <xs:field xpath="ShipDateKey" />
         </xs:keyref>
-        <xs:keyref name="FK_FactInternetSales_DimProduct" refer="dbo_DimProduct_Constraint1">
+        <xs:keyref name="FK_FactInternetSales_DimDate1" refer="dbo_DimDate_Constraint1">
           <xs:selector xpath=".//dbo_FactInternetSales" />
-          <xs:field xpath="ProductKey" />
+          <xs:field xpath="DueDateKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactInternetSales_DimCustomer" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactInternetSales" />
+          <xs:field xpath="CustomerKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactInternetSales_DimDate" refer="dbo_DimDate_Constraint1">
+          <xs:selector xpath=".//dbo_FactInternetSales" />
+          <xs:field xpath="OrderDateKey" />
         </xs:keyref>
         <xs:keyref name="FK_DimCustomer_DimGeography" refer="dbo_DimGeography_Constraint1">
           <xs:selector xpath=".//dbo_DimCustomer" />

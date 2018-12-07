@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="34" scrolltop="-2984" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="84" x="9313" y="5779" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="34" scrolltop="-7142" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="84" x="12383" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="01cc00009001b0300100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="01cc0000900144420100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -84,7 +84,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-2984</Value>
+      <Value>-7142</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -106,6 +106,7 @@
             <Shape Id="Customer Key" Expanded="false">
               <Attributes>
                 <Attribute Id="Customer Key" />
+                <Attribute Id="Birth Date" />
                 <Attribute Id="Commute Distance" />
                 <Attribute Id="Date First Purchase" />
                 <Attribute Id="Email Address" />
@@ -136,10 +137,9 @@
               </Attributes>
               <Position x="475" y="20" />
             </Shape>
-            <Shape Id="English Country Region Name" Expanded="false">
+            <Shape Id="English Country Region Name" Expanded="true">
               <Attributes>
                 <Attribute Id="English Country Region Name" />
-                <Attribute Id="Birth Date" />
               </Attributes>
               <Position x="702" y="20" />
             </Shape>
@@ -246,6 +246,10 @@
         <AttributeRelationship dwd:design-time-name="9a42f994-c89a-4eb8-8aef-6b772500b5bb">
           <AttributeID>City</AttributeID>
           <Name>Город</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="12781949-82da-4135-ae7a-ab375e3a32e4">
+          <AttributeID>Birth Date</AttributeID>
+          <Name>Birth Date</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
@@ -577,12 +581,6 @@
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="90228e30-a9b5-4450-bb8a-96380697ee22">
-          <AttributeID>Birth Date</AttributeID>
-          <Name>Birth Date</Name>
-        </AttributeRelationship>
-      </AttributeRelationships>
       <AttributeHierarchyDisplayFolder>Location</AttributeHierarchyDisplayFolder>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
@@ -604,13 +602,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="67738096-d1b0-4342-89bc-1f2a49e57d75">
+    <Attribute dwd:design-time-name="854d635b-874f-480a-a68b-71731eaa727a">
       <ID>Birth Date</ID>
       <Name>Birth Date</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="16a75e4e-e5db-4213-8b03-911e1585d2eb">
+        <KeyColumn dwd:design-time-name="822265ee-7b44-4dfe-b168-854779a98e33">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d672a38d-245b-4a18-988c-9e3cceb9964c">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a00b4e23-e4c3-461c-86ab-28ef0fcaba7b">
             <TableID>dbo_DimCustomer</TableID>
             <ColumnID>BirthDate</ColumnID>
           </Source>
